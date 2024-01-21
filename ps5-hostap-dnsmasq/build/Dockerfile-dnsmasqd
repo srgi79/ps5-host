@@ -1,0 +1,12 @@
+FROM alpine
+
+RUN apk update
+RUN apk add dnsmasq
+RUN rm -rf /var/cache/apk
+
+COPY entrypoint-dnsmasqd.sh /entrypoint.sh
+COPY config/dnsmasq.hosts /config/dnsmasq.hosts
+COPY config/dnsmasqd.conf /config/dnsmasqd.conf
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
