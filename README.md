@@ -1,6 +1,12 @@
 # ps5-host
 Create folder volume before crating the cointainer
 
+## Update docker image
+- Build the image
+  - docker build -t srgi79/ps5-host-psfree-nossl:latest .
+- Upload the new image to dockerhub
+  - docker push srgi79/ps5-host-psfree-nossl:latest
+
 ## SSL for Users manual
 ~~~
 version: '3.8'
